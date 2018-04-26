@@ -54,10 +54,9 @@ docs/_build/
 
 *.iml
 
+
 *COMMIT_MSG
 
-# QuickBuild
-.qbcache/
 .noseids
 
 # Vim
@@ -65,3 +64,4 @@ docs/_build/
 
 # IDEA
 .idea/*
+
