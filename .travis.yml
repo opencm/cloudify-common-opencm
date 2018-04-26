@@ -1,14 +1,23 @@
 sudo: false
 language: python
 python:
+<<<<<<< HEAD
 - "2.7"
+=======
+- '2.7'
+>>>>>>> cloudify-script-plugin
 env:
 - TOX_ENV=docs
 - TOX_ENV=flake8
 - TOX_ENV=py27
+<<<<<<< HEAD
 - TOX_ENV=py26
 install:
 - pip install tox==1.6.1
+=======
+install:
+- pip install tox
+>>>>>>> cloudify-script-plugin
 script:
 - tox -e $TOX_ENV
 deploy:
@@ -19,7 +28,11 @@ deploy:
     condition: $TOX_ENV = py27
   user: cosmo-maint
   password:
+<<<<<<< HEAD
     secure: "N3cbKuM6HqwPf3R9Ua8vVC0seY6qUxjlVl++qZ/1pIN78p+/Yul1aVkkMPNPksEHC6pivGDPqMajuwD6HYXTm7MpbNZezznSDtjqS5uTFCb6CYsMDuFfv00G99rReAFl9ONwM6OLhbWXcOHVSlzHe5puBK0Kj4u0tbTfeSrumA4="
+=======
+    secure: "BT9UGBFqAUGArM0LZ9YN9wWQzMwZQNKs5k4BF4Brs+K7v46wdGEm7+y52XIjmI/jwztIgGEpKMnHXHjZ7Ik9OOgHgaFyZ14w2X7lP/J/8kyvvLGt7eTMuBPkYBe/jETYXVPU8pcHAVFHeFdAGWvA9DFLzmKWl4dhIAF9Fn7BEcM="
+>>>>>>> cloudify-script-plugin
 - provider: pypi
   server: https://testpypi.python.org/pypi
   on:
@@ -27,9 +40,16 @@ deploy:
     condition: $TOX_ENV = py27
   user: cosmo-maint
   password:
+<<<<<<< HEAD
     secure: "fNhXKwg0tQuj/g01pEVb5eO/yne8wf3Svdgf05m0r9nLaU7eiXmkW1CcbDpdgEoXTh6q0dsstcY0lzgitDYOgqf288eLcafDW94u54imzR+TJkDipmPGbMSKOPXT4d0r40ACV0J72F79O7UysfoDCgpDb+8ujM7QC5EzMQGfxpo="
 after_deploy:
   - git clone https://github.com/cloudify-cosmo/travis-utils.git
   - python travis-utils/validate_pypi.py -v -b $TRAVIS_BRANCH || exit 1
+=======
+    secure: "b+5AedQBmaUt3PTgjDRE1GiRAr6wrK11H5TFit5u+/INJJojlmirEkkf78lrMuKIH32h3QTDDlpAwalMyMQo3lgx+u4/nBsbG1ywXqnvG7Sj+2ejwZjLWMFxO2wJgnkg9h/VepZh/bsoSSsqauQPVY2clLOITUydErYhn0sVvL4="
+after_deploy:
+- git clone https://github.com/cloudify-cosmo/travis-utils.git
+- python travis-utils/validate_pypi.py -v -b $TRAVIS_BRANCH || exit 1
+>>>>>>> cloudify-script-plugin
 notifications:
   flowdock: 1f4ec6febcf1ac9b35ae6c1f0049471f
