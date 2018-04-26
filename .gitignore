@@ -54,14 +54,3 @@ docs/_build/
 
 *.iml
 
-
-*COMMIT_MSG
-
-.noseids
-
-# Vim
-*.swp
-
-# IDEA
-.idea/*
-
