@@ -13,15 +13,18 @@
 #    * See the License for the specific language governing permissions and
 #    * limitations under the License.
 
-
-from setuptools import setup
-
+from setuptools import setup, find_packages
 
 install_requires = [
     'PyYAML==3.10',
     'networkx==1.9.1',
     'requests>=2.7.0,<3.0.0',
-    'retrying==1.3.3'
+    'retrying==1.3.3',
+    'pika==0.9.14',
+    'proxy_tools==0.1.0',
+    'bottle==0.12.7',
+    'jinja2==2.7.2',
+    'requests_toolbelt'
 ]
 
 try:
@@ -34,18 +37,20 @@ try:
 except ImportError:
     install_requires.append('importlib')
 
+try:
+    import argparse  # NOQA
+except ImportError as e:
+    install_requires.append('argparse==1.2.2')
+
+
 setup(
-    name='cloudify-dsl-parser',
+    name='cloudify-common',
     version='4.4.dev1',
-    author='Gigaspaces',
-    author_email='cosmo-admin@gigaspaces.com',
-    packages=['dsl_parser',
-              'dsl_parser.interfaces',
-              'dsl_parser.framework',
-              'dsl_parser.elements',
-              'dsl_parser.import_resolver'],
+    author='Cloudify',
+    author_email='cosmo-admin@cloudify.co',
+    packages=find_packages(exclude=["tests"]),
     license='LICENSE',
-    description='Cloudify DSL parser',
+    description='Cloudify Common',
     zip_safe=False,
     install_requires=install_requires
 )
