@@ -1,4 +1,3 @@
-
 # Cloudify Common includes the following projects:
 
 
