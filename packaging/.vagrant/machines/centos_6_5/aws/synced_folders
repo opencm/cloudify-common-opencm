@@ -1,0 +1,1 @@
+{"rsync":{"/packaging":{"create":true,"guestpath":"/packaging","hostpath":"/tmp/cloudify-common-opencm","disabled":false,"__vagrantfile":true,"owner":"root","group":"root"},"/vagrant":{"guestpath":"/vagrant","hostpath":"/tmp/cloudify-common-opencm/packaging","disabled":false,"__vagrantfile":true,"owner":"root","group":"root"}}}

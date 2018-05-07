@@ -53,5 +53,14 @@ setup(
     license='LICENSE',
     description='Cloudify Common',
     zip_safe=False,
-    install_requires=install_requires
+    install_requires=install_requires,
+    entry_points={
+            'console_scripts': [
+                'ctx = cloudify.proxy.client:main',
+            ]  
+    },
+    package_data={'cloudify.ctx_wrappers': ['ctx.py']},
+    scripts=[
+        'ctx_wrappers/ctx-sh'
+    ]
 )
